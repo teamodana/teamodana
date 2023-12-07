@@ -117,29 +117,27 @@ h1 {
     #topPhotos.top-photos {
         flex-direction: column;
         align-items: center;
-    }
-
-    #topPhotos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
+        position: relative; /* Añade posición relativa al contenedor principal */
     }
 
     #heart {
-        margin-top: 20px; /* Cambiado a margin-top en lugar de margin-bottom */
+        margin: 20px 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -90%);
+        /* Mantén el resto de los estilos del corazón como están */
     }
 
     #card1,
     #card2 {
         margin: 20px 0;
         width: calc(100% - 40px);
-        order: 1; /* Cambia el orden para que las cartas estén arriba y abajo */
+        order: 1;
     }
 
     #card2 {
-        margin-top: 50px; /* Ajusta el margen superior de la segunda carta según sea necesario */
+        margin-top: 50px;
     }
 
     .other-photos .card {
@@ -154,7 +152,6 @@ h1 {
         border-radius: 10px;
     }
 }
-
 
 
 
