@@ -174,3 +174,23 @@ h3 {
 #topPhotos.top-photos {
     display: flex;
 }
+
+.other-photos .card:not(:last-child) {
+    margin-bottom: 20px; /* Separación entre cada carta, excepto la última */
+}
+
+.other-photos .card {
+    width: calc(100% - 40px);
+    margin: 20px 0;
+    background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.other-photos .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Ajusta el comportamiento de la imagen */
+    transform: scale(0.9); /* Reduce la escala de la imagen */
+}
