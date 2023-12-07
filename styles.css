@@ -12,18 +12,18 @@ body {
     width: 100%;
     height: 100%;
     background: url('./fondo2.jpeg') center/cover fixed no-repeat;
-    filter: blur(5px); /* Ajusta el valor de blur según tus preferencias */
-    z-index: -1; /* Coloca el fondo detrás del contenido */
+    filter: blur(5px);
+    z-index: -1;
 }
 
 .overlay {
-    background-color: rgba(31, 30, 30, 0.5); /* Color gris con opacidad */
+    background-color: rgba(31, 30, 30, 0.5);
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1; /* Coloca la capa detrás del contenido */
+    z-index: -1;
 }
 
 .container {
@@ -35,9 +35,6 @@ body {
     min-height: 100vh;
 }
 
-.greeting {
-    margin-bottom: 10px;
-}
 .titulo {
     text-align: center;
     border-radius: 10px;
@@ -50,10 +47,17 @@ h1 {
     color: #df7be2;
     font-size: 1.5em;
     width: 100%;
-    
 }
 
-.card {
+#topPhotos.top-photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#card1,
+#card2 {
     margin: 50px;
     text-align: center;
     border: 2px solid #000;
@@ -80,7 +84,6 @@ h1 {
     height: 50px;
     background: url('corazon.png') no-repeat center/cover;
     cursor: pointer;
-
 }
 
 .other-photos {
@@ -116,10 +119,27 @@ h1 {
         align-items: center;
     }
 
+    #topPhotos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    #heart {
+        margin-top: 20px; /* Cambiado a margin-top en lugar de margin-bottom */
+    }
+
     #card1,
-    #heart,
     #card2 {
         margin: 20px 0;
+        width: calc(100% - 40px);
+        order: 1; /* Cambia el orden para que las cartas estén arriba y abajo */
+    }
+
+    #card2 {
+        margin-top: 50px; /* Ajusta el margen superior de la segunda carta según sea necesario */
     }
 
     .other-photos .card {
@@ -134,6 +154,16 @@ h1 {
         border-radius: 10px;
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 .top-photos img {
     max-width: 100%;
@@ -150,36 +180,4 @@ h3 {
 
 #topPhotos.top-photos {
     display: flex;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s;
-}
-
-body.overlay-show::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    z-index: 1000;
-    opacity: 1;
-    pointer-events: none;
-    transition: opacity 0.5s;
-}
-
-.card p {
-    font-size: 25px;
 }
